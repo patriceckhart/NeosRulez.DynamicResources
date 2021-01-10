@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "type": "neos-package",
+  "name": "neosrulez/dynamicresources",
+  "require": {
+    "neos/neos": "*",
+    "scssphp/scssphp": "1.0.9",
+    "matthiasmullie/minify": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "NeosRulez\\DynamicResources\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "NeosRulez.DynamicResources"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+privilegeTargets:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    'NeosRulez.DynamicResources:ResourceControllerActions':
+      matcher: 'method(NeosRulez\DynamicResources\Controller\ResourceController->.*Action())'
+roles:
+  'Neos.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'NeosRulez.DynamicResources:ResourceControllerActions'
+        permission: GRANT

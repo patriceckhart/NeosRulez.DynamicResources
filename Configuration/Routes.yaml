@@ -1,0 +1,36 @@
+-
+  name: 'NeosRulez.DynamicResources head styles'
+  uriPattern: '_Resources/Dynamic/Head/styles.min.js'
+  defaults:
+    '@package': 'NeosRulez.DynamicResources'
+    '@controller': 'Resource'
+    '@format': 'css'
+    '@action': 'headStyles'
+  appendExceedingArguments: true
+-
+  name: 'NeosRulez.DynamicResources head scripts'
+  uriPattern: '_Resources/Dynamic/Head/scripts.min.js'
+  defaults:
+    '@package': 'NeosRulez.DynamicResources'
+    '@controller': 'Resource'
+    '@format': 'js'
+    '@action': 'headScripts'
+  appendExceedingArguments: true
+-
+  name: 'NeosRulez.DynamicResources footer styles'
+  uriPattern: '_Resources/Dynamic/Footer/styles.min.js'
+  defaults:
+    '@package': 'NeosRulez.DynamicResources'
+    '@controller': 'Resource'
+    '@format': 'css'
+    '@action': 'footerStyles'
+  appendExceedingArguments: true
+-
+  name: 'NeosRulez.DynamicResources head scripts'
+  uriPattern: '_Resources/Dynamic/Footer/scripts.min.js'
+  defaults:
+    '@package': 'NeosRulez.DynamicResources'
+    '@controller': 'Resource'
+    '@format': 'js'
+    '@action': 'footerScripts'
+  appendExceedingArguments: true

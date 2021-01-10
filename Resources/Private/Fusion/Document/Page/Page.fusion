@@ -1,0 +1,34 @@
+prototype(Neos.Neos:Page) {
+    head {
+        neosrulezDynamicResourcesHeaderStyles = Neos.Fusion:Tag {
+            tagName = 'link'
+            attributes {
+                rel = 'stylesheet'
+                type = 'text/css'
+                href = '_Resources/Dynamic/Head/styles.min.js'
+            }
+        }
+        neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes {
+                src = '_Resources/Dynamic/Head/scripts.min.js'
+            }
+        }
+    }
+//    neosrulezDynamicResourcesHeaderStyles = Neos.Fusion:Tag {
+//        @position = 'end'
+//        tagName = 'link'
+//        attributes {
+//            rel = 'stylesheet'
+//            type = 'text/css'
+//            href = '_Resources/Dynamic/Footer/styles.min.js'
+//        }
+//    }
+//    neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
+//        @position = 'end'
+//        tagName = 'script'
+//        attributes {
+//            src = '_Resources/Dynamic/Footer/scripts.min.js'
+//        }
+//    }
+}
