@@ -42,6 +42,46 @@ class ResourceController extends ActionController {
      */
     public function headStylesAction() {
         $resources = $this->settings['resources']['head']['styles'];
+        $result = $this->buildStyles($resources);
+        return $result;
+    }
+
+    /**
+     * @return string
+     * @Flow\SkipCsrfProtection
+     */
+    public function headScriptsAction() {
+        $resources = $this->settings['resources']['head']['scripts'];
+        $result = $this->buildScripts($resources);
+        return $result;
+    }
+
+    /**
+     * @return string
+     * @Flow\SkipCsrfProtection
+     */
+    public function footerStylesAction() {
+        $resources = $this->settings['resources']['footer']['styles'];
+        $result = $this->buildStyles($resources);
+        return $result;
+    }
+
+    /**
+     * @return string
+     * @Flow\SkipCsrfProtection
+     */
+    public function footerScriptsAction() {
+        $resources = $this->settings['resources']['footer']['scripts'];
+        $result = $this->buildScripts($resources);
+        return $result;
+    }
+
+    /**
+     * @param array $resources
+     * @return string
+     * @Flow\SkipCsrfProtection
+     */
+    public function buildStyles($resources) {
         $result = '';
         if(!empty($resources)) {
             foreach ($resources as $i => $resource) {
@@ -54,11 +94,10 @@ class ResourceController extends ActionController {
     }
 
     /**
+     * @param array $resources
      * @return string
-     * @Flow\SkipCsrfProtection
      */
-    public function headScriptsAction() {
-        $resources = $this->settings['resources']['head']['scripts'];
+    public function buildScripts($resources) {
         $result = '';
         if(!empty($resources)) {
             foreach ($resources as $i => $resource) {

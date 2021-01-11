@@ -1,6 +1,6 @@
 -
   name: 'NeosRulez.DynamicResources head styles'
-  uriPattern: '_Resources/Dynamic/Head/styles.min.js'
+  uriPattern: '_Resources/Dynamic/Head/styles.min.css'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'
@@ -18,7 +18,7 @@
   appendExceedingArguments: true
 -
   name: 'NeosRulez.DynamicResources footer styles'
-  uriPattern: '_Resources/Dynamic/Footer/styles.min.js'
+  uriPattern: '_Resources/Dynamic/Footer/styles.min.css'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'

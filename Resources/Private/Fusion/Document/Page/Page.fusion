@@ -5,7 +5,7 @@ prototype(Neos.Neos:Page) {
             attributes {
                 rel = 'stylesheet'
                 type = 'text/css'
-                href = '_Resources/Dynamic/Head/styles.min.js'
+                href = '_Resources/Dynamic/Head/styles.min.css'
             }
         }
         neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
@@ -15,20 +15,20 @@ prototype(Neos.Neos:Page) {
             }
         }
     }
-//    neosrulezDynamicResourcesHeaderStyles = Neos.Fusion:Tag {
-//        @position = 'end'
-//        tagName = 'link'
-//        attributes {
-//            rel = 'stylesheet'
-//            type = 'text/css'
-//            href = '_Resources/Dynamic/Footer/styles.min.js'
-//        }
-//    }
-//    neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
-//        @position = 'end'
-//        tagName = 'script'
-//        attributes {
-//            src = '_Resources/Dynamic/Footer/scripts.min.js'
-//        }
-//    }
+    neosrulezDynamicResourcesHeaderStyles = Neos.Fusion:Tag {
+        @position = 'end'
+        tagName = 'link'
+        attributes {
+            rel = 'stylesheet'
+            type = 'text/css'
+            href = '_Resources/Dynamic/Footer/styles.min.css'
+        }
+    }
+    neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
+        @position = 'end'
+        tagName = 'script'
+        attributes {
+            src = '_Resources/Dynamic/Footer/scripts.min.js'
+        }
+    }
 }

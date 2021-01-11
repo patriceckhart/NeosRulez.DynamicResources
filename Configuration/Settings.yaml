@@ -19,8 +19,8 @@ NeosRulez:
           testCss2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
       footer:
         scripts:
-          testJs: 'resource://NeosRulez.DynamicResources/Private/Styles/test.scss'
-          testJs2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
+          testJs: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test.js'
+          testJs2: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test2.js'
         styles:
           testJs: 'resource://NeosRulez.DynamicResources/Private/Styles/test.scss'
           testJs2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
