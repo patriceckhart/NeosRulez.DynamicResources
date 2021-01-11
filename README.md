@@ -1,6 +1,6 @@
 # Dynamic resources for Neos CMS
 
-A package for Neos CMS to render dynamic css and javascript resources.
+A package for Neos CMS which render dynamic css and javascript resources.
 
 ## Installation
 
