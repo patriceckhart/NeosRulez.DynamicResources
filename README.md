@@ -32,7 +32,6 @@ NeosRulez:
         styles:
           testJs: 'resource://NeosRulez.DynamicResources/Private/Styles/test.scss'
           testJs2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
-}
 ```
 
 ## Author
