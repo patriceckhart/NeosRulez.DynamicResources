@@ -5,13 +5,13 @@ prototype(Neos.Neos:Page) {
             attributes {
                 rel = 'stylesheet'
                 type = 'text/css'
-                href = '_Resources/Dynamic/Head/styles.min.css'
+                href = '/_Resources/Dynamic/Head/styles.min.css'
             }
         }
         neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
             tagName = 'script'
             attributes {
-                src = '_Resources/Dynamic/Head/scripts.min.js'
+                src = '/_Resources/Dynamic/Head/scripts.min.js'
             }
         }
     }
@@ -21,14 +21,14 @@ prototype(Neos.Neos:Page) {
         attributes {
             rel = 'stylesheet'
             type = 'text/css'
-            href = '_Resources/Dynamic/Footer/styles.min.css'
+            href = '/_Resources/Dynamic/Footer/styles.min.css'
         }
     }
     neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
         @position = 'end'
         tagName = 'script'
         attributes {
-            src = '_Resources/Dynamic/Footer/scripts.min.js'
+            src = '/_Resources/Dynamic/Footer/scripts.min.js'
         }
     }
 }

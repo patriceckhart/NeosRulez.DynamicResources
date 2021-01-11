@@ -82,7 +82,7 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function buildStyles($resources) {
-        $result = '';
+        $result = '/*' . $this->getTstamp() . '*/';
         if(!empty($resources)) {
             foreach ($resources as $i => $resource) {
                 $css = $this->compileService->compileScss($resource);
@@ -98,7 +98,7 @@ class ResourceController extends ActionController {
      * @return string
      */
     public function buildScripts($resources) {
-        $result = '';
+        $result = '/*' . $this->getTstamp() . '*/';
         if(!empty($resources)) {
             foreach ($resources as $i => $resource) {
                 $result .= $this->buildDeclaration($i) . $this->minifyFactory->minifyScript($resource) . ';';
@@ -116,6 +116,14 @@ class ResourceController extends ActionController {
     public function buildDeclaration($name) {
         $result = '/*NeosRulez.DynamicResources:' . $name . '*/';
         return $result;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTstamp() {
+        $date = new \DateTime();
+        return $date->getTimestamp();
     }
 
 }

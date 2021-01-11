@@ -6,7 +6,6 @@
     '@controller': 'Resource'
     '@format': 'css'
     '@action': 'headStyles'
-  appendExceedingArguments: true
 -
   name: 'NeosRulez.DynamicResources head scripts'
   uriPattern: '_Resources/Dynamic/Head/scripts.min.js'
@@ -15,7 +14,6 @@
     '@controller': 'Resource'
     '@format': 'js'
     '@action': 'headScripts'
-  appendExceedingArguments: true
 -
   name: 'NeosRulez.DynamicResources footer styles'
   uriPattern: '_Resources/Dynamic/Footer/styles.min.css'
@@ -24,7 +22,6 @@
     '@controller': 'Resource'
     '@format': 'css'
     '@action': 'footerStyles'
-  appendExceedingArguments: true
 -
   name: 'NeosRulez.DynamicResources head scripts'
   uriPattern: '_Resources/Dynamic/Footer/scripts.min.js'
@@ -33,4 +30,3 @@
     '@controller': 'Resource'
     '@format': 'js'
     '@action': 'footerScripts'
-  appendExceedingArguments: true
