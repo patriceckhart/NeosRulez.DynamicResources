@@ -1,6 +1,6 @@
 # Dynamic resources for Neos CMS
 
-A package for Neos CMS which render dynamic css and javascript resources.
+A package for Neos CMS and Neos Flow which render dynamic CSS and Javascript resources.
 
 ## Installation
 
@@ -20,18 +20,14 @@ NeosRulez:
     resources:
       head:
         scripts:
-          testJs: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test.js'
-          testJs2: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test2.js'
+          acmeHeaderJs: 'resource://Acme.Package/Private/JavaScript/script.js'
         styles:
-          testCss: 'resource://NeosRulez.DynamicResources/Private/Styles/test.scss'
-          testCss2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
+          acmeHeaderCss: 'resource://Acme.Package/Private/Styles/styles.scss'
       footer:
         scripts:
-          testJs: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test.js'
-          testJs2: 'resource://NeosRulez.DynamicResources/Private/JavaScript/test2.js'
+          acmeFooterJs: 'resource://Acme.Package/Private/JavaScript/footerscript.js'
         styles:
-          testJs: 'resource://NeosRulez.DynamicResources/Private/Styles/test.scss'
-          testJs2: 'resource://NeosRulez.DynamicResources/Private/Styles/test2.scss'
+          acmeFooterCss: 'resource://Acme.Package/Private/Styles/footerstyles.scss'
 ```
 
 ## Author

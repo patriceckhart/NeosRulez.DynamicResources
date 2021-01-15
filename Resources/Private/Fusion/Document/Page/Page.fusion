@@ -1,18 +1,19 @@
 prototype(Neos.Neos:Page) {
+    @context.neosrulezDynamicResourcebaseUri = NeosRulez.DynamicResources:Class.Request
     head {
         neosrulezDynamicResourcesHeaderStyles = Neos.Fusion:Tag {
             tagName = 'link'
             attributes {
                 rel = 'stylesheet'
                 type = 'text/css'
-                href = '/_Resources/Dynamic/Head/styles.min.css'
+                href = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Head/styles.min.css'}
             }
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.resources.head.styles') ? true : false}
         }
         neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
             tagName = 'script'
             attributes {
-                src = '/_Resources/Dynamic/Head/scripts.min.js'
+                src = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Head/scripts.min.js'}
             }
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.resources.head.scripts') ? true : false}
         }
@@ -23,7 +24,7 @@ prototype(Neos.Neos:Page) {
         attributes {
             rel = 'stylesheet'
             type = 'text/css'
-            href = '/_Resources/Dynamic/Footer/styles.min.css'
+            href = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Footer/styles.min.css'}
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.resources.footer.styles') ? true : false}
         }
     }
@@ -31,7 +32,7 @@ prototype(Neos.Neos:Page) {
         @position = 'end'
         tagName = 'script'
         attributes {
-            src = '/_Resources/Dynamic/Footer/scripts.min.js'
+            src = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Footer/scripts.min.js'}
         }
         @if.render = ${Configuration.setting('NeosRulez.DynamicResources.resources.footer.scripts') ? true : false}
     }
