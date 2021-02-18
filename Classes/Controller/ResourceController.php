@@ -12,6 +12,12 @@ class ResourceController extends ActionController {
 
     /**
      * @Flow\Inject
+     * @var \Neos\ContentRepository\Domain\Service\ContextFactoryInterface
+     */
+    protected $contextFactory;
+
+    /**
+     * @Flow\Inject
      * @var \NeosRulez\DynamicResources\Factory\MinifyFactory
      */
     protected $minifyFactory;
@@ -21,6 +27,12 @@ class ResourceController extends ActionController {
      * @var \NeosRulez\DynamicResources\Service\CompileService
      */
     protected $compileService;
+
+    /**
+     * @var \Neos\Cache\Frontend\StringFrontend
+     * @Flow\Inject
+     */
+    protected $resourceCache;
 
     /**
      * @var array
@@ -41,8 +53,22 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function headStylesAction() {
-        $resources = $this->settings['resources']['head']['styles'];
-        $result = $this->buildStyles($resources);
+        header('Content-Type: text/css');
+        if ($this->resourceCache->has('compiledHeaderCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+            $result = $this->resourceCache->get('compiledHeaderCss');
+        } else {
+            if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
+                if(array_key_exists('resources', $this->settings[$this->getCurrentSiteName()])) {
+                    if(array_key_exists('head', $this->settings[$this->getCurrentSiteName()]['resources'])) {
+                        if(array_key_exists('styles', $this->settings[$this->getCurrentSiteName()]['resources']['head'])) {
+                            $resources = $this->settings[$this->getCurrentSiteName()]['resources']['head']['styles'];
+                            $result = $this->buildStyles($resources);
+                            $this->resourceCache->set('compiledHeaderCss', $result);
+                        }
+                    }
+                }
+            }
+        }
         return $result;
     }
 
@@ -51,8 +77,22 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function headScriptsAction() {
-        $resources = $this->settings['resources']['head']['scripts'];
-        $result = $this->buildScripts($resources);
+        header('Content-Type: application/javascript');
+        if ($this->resourceCache->has('compiledHeaderJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+            $result = $this->resourceCache->get('compiledHeaderJs');
+        } else {
+            if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
+                if (array_key_exists('resources', $this->settings[$this->getCurrentSiteName()])) {
+                    if (array_key_exists('head', $this->settings[$this->getCurrentSiteName()]['resources'])) {
+                        if (array_key_exists('scripts', $this->settings[$this->getCurrentSiteName()]['resources']['head'])) {
+                            $resources = $this->settings[$this->getCurrentSiteName()]['resources']['head']['scripts'];
+                            $result = $this->buildScripts($resources);
+                            $this->resourceCache->set('compiledHeaderJs', $result);
+                        }
+                    }
+                }
+            }
+        }
         return $result;
     }
 
@@ -61,8 +101,22 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function footerStylesAction() {
-        $resources = $this->settings['resources']['footer']['styles'];
-        $result = $this->buildStyles($resources);
+        header('Content-Type: text/css');
+        if ($this->resourceCache->has('compiledFooterCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+            $result = $this->resourceCache->get('compiledFooterCss');
+        } else {
+            if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
+                if (array_key_exists('resources', $this->settings[$this->getCurrentSiteName()])) {
+                    if (array_key_exists('footer', $this->settings[$this->getCurrentSiteName()]['resources'])) {
+                        if (array_key_exists('styles', $this->settings[$this->getCurrentSiteName()]['resources']['footer'])) {
+                            $resources = $this->settings[$this->getCurrentSiteName()]['resources']['footer']['styles'];
+                            $result = $this->buildStyles($resources);
+                            $this->resourceCache->set('compiledFooterCss', $result);
+                        }
+                    }
+                }
+            }
+        }
         return $result;
     }
 
@@ -71,8 +125,22 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function footerScriptsAction() {
-        $resources = $this->settings['resources']['footer']['scripts'];
-        $result = $this->buildScripts($resources);
+        header('Content-Type: application/javascript');
+        if ($this->resourceCache->has('compiledFooterJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+            $result = $this->resourceCache->get('compiledFooterJs');
+        } else {
+            if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
+                if (array_key_exists('resources', $this->settings[$this->getCurrentSiteName()])) {
+                    if (array_key_exists('footer', $this->settings[$this->getCurrentSiteName()]['resources'])) {
+                        if (array_key_exists('scripts', $this->settings[$this->getCurrentSiteName()]['resources']['footer'])) {
+                            $resources = $this->settings[$this->getCurrentSiteName()]['resources']['footer']['scripts'];
+                            $result = $this->buildScripts($resources);
+                            $this->resourceCache->set('compiledFooterJs', $result);
+                        }
+                    }
+                }
+            }
+        }
         return $result;
     }
 
@@ -89,7 +157,6 @@ class ResourceController extends ActionController {
                 $result .= $this->buildDeclaration($i) . $css;
             }
         }
-        header('Content-Type: text/css');
         return $result;
     }
 
@@ -105,7 +172,6 @@ class ResourceController extends ActionController {
             }
         }
         $result .= ';';
-        header('Content-Type: application/javascript');
         return $result;
     }
 
@@ -124,6 +190,16 @@ class ResourceController extends ActionController {
     public function getTstamp() {
         $date = new \DateTime();
         return $date->getTimestamp();
+    }
+
+    /**
+     * @return string
+     * @Flow\SkipCsrfProtection
+     */
+    public function getCurrentSiteName() {
+        $context = $this->contextFactory->create();
+        $currentSiteNode = $context->getCurrentSiteNode();
+        return $currentSiteNode->getName();
     }
 
 }

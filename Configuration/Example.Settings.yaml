@@ -1,13 +1,14 @@
 NeosRulez:
   DynamicResources:
-    resources:
-      head:
-        scripts:
-          acmeHeaderJs: 'resource://Acme.Package/Private/JavaScript/script.js'
-        styles:
-          acmeHeaderCss: 'resource://Acme.Package/Private/Styles/styles.scss'
-      footer:
-        scripts:
-          acmeFooterJs: 'resource://Acme.Package/Private/JavaScript/footerscript.js'
-        styles:
-          acmeFooterCss: 'resource://Acme.Package/Private/Styles/footerstyles.scss'
+    site:
+      resources:
+        head:
+          scripts:
+            acmeHeaderJs: 'resource://Acme.Package/Private/JavaScript/script.js'
+          styles:
+            acmeHeaderCss: 'resource://Acme.Package/Private/Styles/styles.scss'
+        footer:
+          scripts:
+            acmeFooterJs: 'resource://Acme.Package/Private/JavaScript/footerscript.js'
+          styles:
+            acmeFooterCss: 'resource://Acme.Package/Private/Styles/footerstyles.scss'

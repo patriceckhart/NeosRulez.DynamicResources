@@ -1,0 +1,11 @@
+NeosRulez\DynamicResources\Controller\ResourceController:
+  properties:
+    resourceCache:
+      object:
+        factoryObjectName: Neos\Flow\Cache\CacheManager
+        factoryMethodName: getCache
+        arguments:
+          1:
+            value: NeosRulez_CssCache
+          2:
+            value: NeosRulez_JsCache
