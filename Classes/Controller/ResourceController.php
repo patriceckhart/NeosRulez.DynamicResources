@@ -53,7 +53,7 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function headStylesAction() {
-        header('Content-Type: text/css');
+        $this->response->setContentType('text/css');
         if ($this->resourceCache->has('compiledHeaderCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledHeaderCss');
         } else {
@@ -77,7 +77,7 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function headScriptsAction() {
-        header('Content-Type: application/javascript');
+        $this->response->setContentType('application/javascript');
         if ($this->resourceCache->has('compiledHeaderJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledHeaderJs');
         } else {
@@ -101,7 +101,7 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function footerStylesAction() {
-        header('Content-Type: text/css');
+        $this->response->setContentType('text/css');
         if ($this->resourceCache->has('compiledFooterCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledFooterCss');
         } else {
@@ -125,7 +125,7 @@ class ResourceController extends ActionController {
      * @Flow\SkipCsrfProtection
      */
     public function footerScriptsAction() {
-        header('Content-Type: application/javascript');
+        $this->response->setContentType('application/javascript');
         if ($this->resourceCache->has('compiledFooterJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledFooterJs');
         } else {
