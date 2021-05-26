@@ -1,6 +1,6 @@
 # Dynamic resources for Neos CMS
 
-A package for Neos CMS which render dynamic CSS (SASS) and Javascript resources.
+A package for Neos CMS which render and cache dynamic CSS (SASS) and Javascript resources.
 
 ## Installation
 
@@ -14,7 +14,7 @@ composer require neosrulez/dynamicresources
 
 ## Usage
 
-```
+```yaml
 NeosRulez:
   DynamicResources:
     site:
