@@ -54,7 +54,7 @@ class ResourceController extends ActionController {
      */
     public function headStylesAction() {
         $this->response->setContentType('text/css');
-        if ($this->resourceCache->has('compiledHeaderCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+        if ($this->resourceCache->has('compiledHeaderCss') && array_key_exists('FLOW_CONTEXT', $_ENV) && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledHeaderCss');
         } else {
             if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
@@ -78,7 +78,7 @@ class ResourceController extends ActionController {
      */
     public function headScriptsAction() {
         $this->response->setContentType('application/javascript');
-        if ($this->resourceCache->has('compiledHeaderJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+        if ($this->resourceCache->has('compiledHeaderJs') && array_key_exists('FLOW_CONTEXT', $_ENV) && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledHeaderJs');
         } else {
             if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
@@ -102,7 +102,7 @@ class ResourceController extends ActionController {
      */
     public function footerStylesAction() {
         $this->response->setContentType('text/css');
-        if ($this->resourceCache->has('compiledFooterCss') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+        if ($this->resourceCache->has('compiledFooterCss') && array_key_exists('FLOW_CONTEXT', $_ENV) && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledFooterCss');
         } else {
             if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
@@ -126,7 +126,7 @@ class ResourceController extends ActionController {
      */
     public function footerScriptsAction() {
         $this->response->setContentType('application/javascript');
-        if ($this->resourceCache->has('compiledFooterJs') && $_ENV['FLOW_CONTEXT'] == 'Production') {
+        if ($this->resourceCache->has('compiledFooterJs') && array_key_exists('FLOW_CONTEXT', $_ENV) && $_ENV['FLOW_CONTEXT'] == 'Production') {
             $result = $this->resourceCache->get('compiledFooterJs');
         } else {
             if(array_key_exists($this->getCurrentSiteName(), $this->settings)) {
