@@ -13,6 +13,7 @@ prototype(Neos.Neos:Page) {
         neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
             tagName = 'script'
             attributes {
+                type = 'text/javascript'
                 src = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Head/scripts.min.js'}
             }
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.head.scripts') ? true : false}
@@ -32,6 +33,7 @@ prototype(Neos.Neos:Page) {
         @position = 'end'
         tagName = 'script'
         attributes {
+            type = 'text/javascript'
             src = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Footer/scripts.min.js'}
         }
         @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.footer.scripts') ? true : false}

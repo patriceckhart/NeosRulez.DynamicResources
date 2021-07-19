@@ -1,5 +1,5 @@
 {
-  "description": "A package for Neos CMS which render and cache dynamic CSS (SASS) and Javascript resources.",
+  "description": "A package for Neos CMS which render and cache dynamic CSS (scss) and Javascript resources.",
   "type": "neos-package",
   "name": "neosrulez/dynamicresources",
   "require": {
