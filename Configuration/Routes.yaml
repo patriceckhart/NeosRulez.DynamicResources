@@ -1,6 +1,6 @@
 -
   name: 'head styles'
-  uriPattern: '_Resources/Dynamic/Head/styles.min.css'
+  uriPattern: 'DynamicResources/Head/styles.min.css'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'
@@ -8,7 +8,7 @@
     '@action': 'headStyles'
 -
   name: 'head scripts'
-  uriPattern: '_Resources/Dynamic/Head/scripts.min.js'
+  uriPattern: 'DynamicResources/Head/scripts.min.js'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'
@@ -16,7 +16,7 @@
     '@action': 'headScripts'
 -
   name: 'footer styles'
-  uriPattern: '_Resources/Dynamic/Footer/styles.min.css'
+  uriPattern: 'DynamicResources/Footer/styles.min.css'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'
@@ -24,7 +24,7 @@
     '@action': 'footerStyles'
 -
   name: 'head scripts'
-  uriPattern: '_Resources/Dynamic/Footer/scripts.min.js'
+  uriPattern: 'DynamicResources/Footer/scripts.min.js'
   defaults:
     '@package': 'NeosRulez.DynamicResources'
     '@controller': 'Resource'

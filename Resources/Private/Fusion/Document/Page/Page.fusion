@@ -6,7 +6,7 @@ prototype(Neos.Neos:Page) {
             attributes {
                 rel = 'stylesheet'
                 type = 'text/css'
-                href = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Head/styles.min.css'}
+                href = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Head/styles.min.css'}
             }
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.head.styles') ? true : false}
         }
@@ -14,7 +14,7 @@ prototype(Neos.Neos:Page) {
             tagName = 'script'
             attributes {
                 type = 'text/javascript'
-                src = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Head/scripts.min.js'}
+                src = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Head/scripts.min.js'}
             }
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.head.scripts') ? true : false}
         }
@@ -25,7 +25,7 @@ prototype(Neos.Neos:Page) {
         attributes {
             rel = 'stylesheet'
             type = 'text/css'
-            href = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Footer/styles.min.css'}
+            href = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Footer/styles.min.css'}
             @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.footer.styles') ? true : false}
         }
     }
@@ -34,7 +34,7 @@ prototype(Neos.Neos:Page) {
         tagName = 'script'
         attributes {
             type = 'text/javascript'
-            src = ${neosrulezDynamicResourcebaseUri + '_Resources/Dynamic/Footer/scripts.min.js'}
+            src = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Footer/scripts.min.js'}
         }
         @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.footer.scripts') ? true : false}
     }
