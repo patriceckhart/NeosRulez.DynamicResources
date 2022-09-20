@@ -26,8 +26,8 @@ prototype(Neos.Neos:Page) {
             rel = 'stylesheet'
             type = 'text/css'
             href = ${neosrulezDynamicResourcebaseUri + 'DynamicResources/Footer/styles.min.css'}
-            @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.footer.styles') ? true : false}
         }
+        @if.render = ${Configuration.setting('NeosRulez.DynamicResources.' + site.nodename + '.resources.footer.styles') ? true : false}
     }
     neosrulezDynamicResourcesHeaderScripts = Neos.Fusion:Tag {
         @position = 'end'
