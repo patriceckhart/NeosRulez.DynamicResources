@@ -1,5 +1,5 @@
 <?php
-namespace NeosRulez\DynamicResources\Factory;
+namespace NeosRulez\DynamicResources\Service;
 
 use Neos\Flow\Annotations as Flow;
 use MatthiasMullie\Minify;
@@ -7,17 +7,18 @@ use MatthiasMullie\Minify;
 /**
  * @Flow\Scope("singleton")
  */
-class MinifyFactory {
+class MinifyService
+{
 
     /**
      * @param string $script
      * @return string
      */
-    public function minifyScript($script) {
+    public function minifyScript(string $script): string
+    {
         $sourcePath = file_get_contents($script);
         $minifier = new Minify\JS($sourcePath);
-        $result = $minifier->minify();
-        return $result;
+        return $minifier->minify();
     }
 
 }

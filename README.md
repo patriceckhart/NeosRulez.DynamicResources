@@ -4,10 +4,6 @@ A package for Neos CMS which render and cache dynamic CSS (scss) and Javascript 
 
 ## Installation
 
-The NeosRulez.DynamicResources package is listed on packagist (https://packagist.org/packages/neosrulez/dynamicresources) - therefore you don't have to include the package in your "repositories" entry any more.
-
-Just run:
-
 ```
 composer require neosrulez/dynamicresources
 ```
@@ -21,14 +17,14 @@ NeosRulez:
       resources:
         head:
           scripts:
-            acmeHeaderJs: 'resource://Acme.Package/Private/JavaScript/script.js'
+            acmeHeaderJs: 'resource://Acme.Package/Private/JavaScript/Scripts.js'
           styles:
-            acmeHeaderCss: 'resource://Acme.Package/Private/Styles/styles.scss'
+            acmeHeaderCss: 'resource://Acme.Package/Private/Styles/Styles.scss'
         footer:
           scripts:
-            acmeFooterJs: 'resource://Acme.Package/Private/JavaScript/footerscript.js'
+            acmeFooterJs: 'resource://Acme.Package/Private/JavaScript/Footer/Scripts.js'
           styles:
-            acmeFooterCss: 'resource://Acme.Package/Private/Styles/footerstyles.scss'
+            acmeFooterCss: 'resource://Acme.Package/Private/Styles/Footer/Styles.scss'
 ```
 
 ## Author
