@@ -5,10 +5,10 @@ namespace NeosRulez\DynamicResources\Controller;
  * This file is part of the NeosRulez.DynamicResources package.
  */
 
+use Neos\ContentRepositoryRegistry\ContentRepositoryRegistry;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
-
-use Neos\ContentRepository\Domain\Service\ContextFactoryInterface;
+use Neos\Neos\FrontendRouting\SiteDetection\SiteDetectionResult;
 use NeosRulez\DynamicResources\Service\MinifyService;
 use NeosRulez\DynamicResources\Service\CompileService;
 use Neos\Cache\Frontend\StringFrontend;
@@ -16,11 +16,8 @@ use Neos\Cache\Frontend\StringFrontend;
 class ResourceController extends ActionController
 {
 
-    /**
-     * @Flow\Inject
-     * @var ContextFactoryInterface
-     */
-    protected $contextFactory;
+    #[\Neos\Flow\Annotations\Inject]
+    protected ContentRepositoryRegistry $contentRepositoryRegistry;
 
     /**
      * @Flow\Inject
@@ -215,9 +212,10 @@ class ResourceController extends ActionController
      */
     private function getCurrentSiteName(): string
     {
-        $context = $this->contextFactory->create();
-        $currentSiteNode = $context->getCurrentSiteNode();
-        return $currentSiteNode->getName();
+        $siteNode = SiteDetectionResult::fromRequest(
+            $this->request->getHttpRequest()
+        );
+        return $siteNode->siteNodeName->value;
     }
 
     /**
